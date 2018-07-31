@@ -1,6 +1,12 @@
 # FlakeChain v0.3.0-alpha   
 
-###### FlakeChain is Monero v12 (Cryptonote v7) fork with clear Genesis Block, Rich Ecosystem and Application Development Platform included.
+###### FlakeChain is Monero v12 (Cryptonote v7) fork with Rich Ecosystem and Application Development Platform included
+
+## Description
+
+
+FlakeChain is a private, secure, untraceable, decentralised digital currency. You are your bank, you control your funds, 
+and nobody can trace your transfers unless you allow them to do so.
 
 ## Building from source
 
@@ -38,23 +44,28 @@ or download source archives from (!Releases)[https://github.com/flakechain/flake
 pull any commit using
 
 ```shell
+# checkout branch
 git checkout smart-contracts
-git checkout 61eea839786149e587f939bcdb1c40009638845f
+
+# checkout commit
+git checkout 61eea839786149e587f939bcdb1c40009638845f   
 ```
 
 ### Building
 
-Just run `make` command from project root folder to launch wrapper Makefile or run standard for CMake projects
+Just run `make` command from project root folder to launch Makefile wrapper for CMake or run standard CMake building flow
 
 ```shell
 $ mkdir build && cd build && cmake .. && make
 ```
 
-And wait until it finish compile and link tasks.
+Wait until it finish compile and link tasks.
 
 
-## Copytights
+## Copyright
 
 &copy; 2018 FlakeChain contributors
+
 &copy; 2014-2018 Monero contributors
+
 &copy; before 2014 Cryptonote contributors

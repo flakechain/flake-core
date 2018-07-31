@@ -33,7 +33,7 @@
 #include <string>
 #include <boost/uuid/uuid.hpp>
 
-#include <flakechain.h>
+#include <flakechain_config.h>
 
 #define CRYPTONOTE_DNS_TIMEOUT_MS                       20000
 
