@@ -1,6 +1,7 @@
 // keccak.c
 // 19-Nov-11  Markku-Juhani O. Saarinen <mjos@iki.fi>
 // A baseline Keccak (3rd round) implementation.
+// 03-Jul-18  0xA01 <dev@flakechain.com>
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -131,4 +132,51 @@ void keccak(const uint8_t *in, size_t inlen, uint8_t *md, int mdlen)
 void keccak1600(const uint8_t *in, size_t inlen, uint8_t *md)
 {
     keccak(in, inlen, md, sizeof(state_t));
+}
+
+void keccak_3200(const uint8_t *in, size_t inlen, uint8_t *md, int mdlen)
+{
+    state_t st;
+    uint8_t temp[144];
+    size_t i, rsiz, rsizw;
+
+    static_assert(HASH_DATA_AREA <= sizeof(temp), "Bad keccak3200 preconditions");
+    if (mdlen <= 0 || (mdlen > 100 && sizeof(st) != (size_t)mdlen))
+    {
+        local_abort("Bad keccak3200 use");
+    }
+
+    rsiz = sizeof(state_t) == mdlen ? HASH_DATA_AREA : 200 - 2 * mdlen;
+    rsizw = rsiz / 8;
+
+    memset(st, 0, sizeof(st));
+
+    for ( ; inlen >= rsiz; inlen -= rsiz, in += rsiz) {
+        for (i = 0; i < rsizw; i++)
+            st[i] ^= ((uint64_t *) in)[i];
+        keccakf(st, KECCAK_3200_ROUNDS);
+    }
+
+    // last block and padding
+    if (inlen + 1 >= sizeof(temp) || inlen > rsiz || rsiz - inlen + inlen + 1 >= sizeof(temp) || rsiz == 0 || rsiz - 1 >= sizeof(temp) || rsizw * 8 > sizeof(temp))
+    {
+        local_abort("Bad keccak3200 use");
+    }
+
+    memcpy(temp, in, inlen);
+    temp[inlen++] = 1;
+    memset(temp + inlen, 0, rsiz - inlen);
+    temp[rsiz - 1] |= 0x80;
+
+    for (i = 0; i < rsizw; i++)
+        st[i] ^= ((uint64_t *) temp)[i];
+
+    keccakf(st, KECCAK_3200_ROUNDS);
+
+    memcpy(md, st, mdlen);
+}
+
+void keccak3200(const uint8_t *in, size_t inlen, uint8_t *md)
+{
+    keccak_3200(in, inlen, md, sizeof(state_t));
 }
