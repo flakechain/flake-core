@@ -28,3 +28,5 @@
 #define FLAKE_GENESIS_TX                                ("010a01ff0001ffffffffffff0f029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd0880712101fbbddd38f518e908093781c1fd42242e426e77aa7fec4665e6dec8c7e3638fa8")
 // as we started in April 2018
 #define FLAKE_GENESIS_NONCE                             (2018)
+
+#define FLAKE_v2_HARDFORK_BLOCK                         (70000)

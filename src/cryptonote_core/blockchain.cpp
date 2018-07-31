@@ -56,6 +56,7 @@
 #if defined(PER_BLOCK_CHECKPOINT)
 #include "blocks/blocks.h"
 #endif
+#include "flakechain_config.h"
 
 #undef MONERO_DEFAULT_LOG_CATEGORY
 #define MONERO_DEFAULT_LOG_CATEGORY "blockchain"
@@ -94,7 +95,7 @@ static const struct {
   { 1, 1, 0, 1530489606 },
 
   // version 2 starts from block 69505, which is on or around the 31th of Jul, 2018.
-  { 2, 69606, 0, 1533016606 }
+  { 2, FLAKE_v2_HARDFORK_BLOCK, 0, 1535770000 }
 
 };
 static const uint64_t mainnet_hard_fork_version_1_till = 69505;
