@@ -1,3 +1,4 @@
+// Copyright (c) 2018, The Flakechain Project
 // Copyright (c) 2014-2018, The Monero Project
 //
 // All rights reserved.
@@ -39,7 +40,7 @@ namespace Monero {
 namespace Utils {
 
 bool isAddressLocal(const std::string &address)
-{ 
+{
     try {
         return tools::is_local_address(address);
     } catch (const std::exception &e) {

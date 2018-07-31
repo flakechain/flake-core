@@ -1,3 +1,4 @@
+// Copyright (c) 2018, The Flakechain Project
 // Copyright (c) 2014-2018, The Monero Project
 //
 // All rights reserved.
@@ -91,7 +92,7 @@ namespace wallet_args
     const std::function<void(const std::string&, bool)> &print,
     const char *default_log_name,
     bool log_to_console)
-  
+
   {
     namespace bf = boost::filesystem;
     namespace po = boost::program_options;
