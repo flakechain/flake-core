@@ -94,11 +94,11 @@ static const struct {
   // version 1 from the start of the blockchain
   { 1, 1, 0, 1530489606 },
 
-  // version 2 starts from block 69505, which is on or around the 31th of Jul, 2018.
+  // version 2 starts from block 70000, which is on or around September, 2018.
   { 2, FLAKE_v2_HARDFORK_BLOCK, 0, 1535770000 }
 
 };
-static const uint64_t mainnet_hard_fork_version_1_till = 69505;
+static const uint64_t mainnet_hard_fork_version_1_till = FLAKE_v2_HARDFORK_BLOCK;
 
 static const struct {
   uint8_t version;
