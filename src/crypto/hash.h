@@ -72,6 +72,10 @@ namespace crypto {
     return h;
   }
 
+  inline void cn_fast_hash_3200(const void *data, std::size_t length, hash &hash) {
+    cn_fast_hash_3200(data, length, reinterpret_cast<char *>(&hash));
+  }
+
   inline hash cn_fast_hash_3200(const void *data, std::size_t length) {
     hash h;
     cn_fast_hash_3200(data, length, reinterpret_cast<char *>(&h));
