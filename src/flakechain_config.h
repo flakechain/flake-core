@@ -12,7 +12,7 @@
 
 #define P2P_SUPPORT_FLAG_TROUBLESOME_BLOCKS             0x02
 
-#define FLAKE_NAME                                      "flakechain"
+#define FLAKE_NAME                                      "snowflake"
 #define FLAKE_TRUSTED_PUBKEY                            ("0000000000000000000000000000000000000000000000000000000000000000")
 
 #define FLAKE_PUBLIC_ADDRESS_BASE58_PREFIX              (151)
