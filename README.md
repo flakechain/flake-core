@@ -2,8 +2,9 @@
 
 ###### FlakeChain is Monero v12 (Cryptonote v7) fork with Rich Ecosystem and Application Development Platform included
 
-## Description
+![Flakechain](./assets/flake1024x1024.png)
 
+## Description
 
 FlakeChain is a private, secure, untraceable, decentralised digital currency. You are your bank, you control your funds, 
 and nobody can trace your transfers unless you allow them to do so.
