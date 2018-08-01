@@ -8,6 +8,14 @@
 FlakeChain is a private, secure, untraceable, decentralised digital currency. You are your bank, you control your funds, 
 and nobody can trace your transfers unless you allow them to do so.
 
+## Community
+
+[Github](https://github.com/flakechain)
+[Discord](https://discordapp.com/invite/NqgvVYT)
+[Telegram](https://t.me/flakechain)
+[BitcoinTalk](https://bitcointalk.org/index.php?topic=4453691)
+[Twitter](https://twitter.com/flakechain)
+
 ## Building from source
 
 ### Prerequisite
@@ -77,8 +85,8 @@ $ cd flake-core && git submodule init && git submodule update
 ```
 
 You can pull latest stable source from @flakechain/flake-core master branch.
-If you are interested in experimental feature just checkout it's (!feature-branch)[https://github.com/flakechain/flake-core/branches] after cloning
-or download source archives from (!Releases)[https://github.com/flakechain/flake-core/releases] and for sure you can
+If you are interested in experimental feature just checkout it's [feature-branch](https://github.com/flakechain/flake-core/branches) after cloning
+or download source archives from [Releases](https://github.com/flakechain/flake-core/releases) and for sure you can
 pull any commit using
 
 ```bash
