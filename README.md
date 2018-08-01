@@ -12,30 +12,49 @@ and nobody can trace your transfers unless you allow them to do so.
 
 ### Prerequisite
 
-#### Ubuntu/Linux/Unix
-
 To build and launch FlakeChain on POSIX compatible OS you need first setup required libraries and tools:
 
-##### Ubuntu
+##### Ubuntu 18.04
 
-```shell
-$ apt install libboost-dev-all libzmq-dev ... # TODO
+Open terminal session and run following commands or execute [requirements-ubuntu.sh](./bin/requirements-ubuntu.sh) file.
+
+```bash
+# update apt sources on fresh system
+$ sudo apt update && apt upgrade
+$ sudo apt install \
+    git-core \
+    build-essential \
+    cmake \
+    libboost-all-dev \
+    miniupnpc \
+    libunbound-dev \
+    graphviz \
+    doxygen \
+    libunwind8-dev \
+    pkg-config \
+    libssl-dev \
+    libcurl4-openssl-dev \
+    libgtest-dev \
+    libreadline-dev \
+    libminiupnpc-dev \
+    libzmq3-dev
+
 ```
 
-##### Another Distro
+##### Another Distributives
 
 > Just use your package manager and/or naming convention to install list of required software from previous APT command.
 
 ### Getting The Source
 
-```shell
+```bash
 $ git clone --recursive https://github.com/flakechain/flake-core.git
 ```
 
-Or clone Git Submodules later (clned already)
+Or clone Git Submodules later (cloned Project before)
 
-```shell
-$ git clone https://github.com/flakechain/flake-core.git && cd flake-core && git submodules init && git submodules update
+```bash
+$ cd flake-core && git submodule init && git submodule update
 ```
 
 You can pull latest stable source from @flakechain/flake-core master branch.
@@ -43,9 +62,9 @@ If you are interested in experimental feature just checkout it's (!feature-branc
 or download source archives from (!Releases)[https://github.com/flakechain/flake-core/releases] and for sure you can
 pull any commit using
 
-```shell
-# checkout branch
-git checkout smart-contracts
+```bash
+# checkout branch smart-contracts-feature
+git checkout smart-contracts-feature
 
 # checkout commit
 git checkout 61eea839786149e587f939bcdb1c40009638845f   
@@ -55,7 +74,7 @@ git checkout 61eea839786149e587f939bcdb1c40009638845f
 
 Just run `make` command from project root folder to launch Makefile wrapper for CMake or run standard CMake building flow
 
-```shell
+```bash
 $ mkdir build && cd build && cmake .. && make
 ```
 
@@ -68,4 +87,4 @@ Wait until it finish compile and link tasks.
 
 &copy; 2014-2018 Monero contributors
 
-&copy; before 2014 Cryptonote contributors
+&copy; ~ 2014 Cryptonote contributors
