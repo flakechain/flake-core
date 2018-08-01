@@ -1,3 +1,4 @@
+// Copyright (c) 2018, The Flakechain Project
 // Copyright (c) 2014-2018, The Monero Project
 //
 // All rights reserved.
@@ -58,7 +59,7 @@ namespace cryptonote
   {
     const descriptors arg{};
     rpc_args config{};
-    
+
     config.bind_ip = command_line::get_arg(vm, arg.rpc_bind_ip);
     if (!config.bind_ip.empty())
     {

@@ -1,3 +1,4 @@
+// Copyright (c) 2018, The Flakechain Project
 // Copyright (c) 2014-2018, The Monero Project
 //
 // All rights reserved.
@@ -73,7 +74,7 @@ public:
     // deprecated: use recoverFromKeysWithPassword() instead
     bool recoverFromKeys(const std::string &path,
                             const std::string &language,
-                            const std::string &address_string, 
+                            const std::string &address_string,
                             const std::string &viewkey_string,
                             const std::string &spendkey_string = "");
     bool recoverFromDevice(const std::string &path,
@@ -206,7 +207,7 @@ private:
 
 private:
     friend class PendingTransactionImpl;
-    friend class UnsignedTransactionImpl;    
+    friend class UnsignedTransactionImpl;
     friend class TransactionHistoryImpl;
     friend struct Wallet2CallbackImpl;
     friend class AddressBookImpl;

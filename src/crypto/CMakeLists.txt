@@ -1,3 +1,4 @@
+# Copyright (c) 2018, The Flakechain Project
 # Copyright (c) 2014-2018, The Monero Project
 #
 # All rights reserved.
@@ -92,7 +93,7 @@ if (ARM)
 endif()
 
 # Because of the way Qt works on android with JNI, the code does not live in the main android thread
-# So this code runs with a 1 MB default stack size. 
+# So this code runs with a 1 MB default stack size.
 # This will force the use of the heap for the allocation of the scratchpad
 if (ANDROID OR IOS)
   if( BUILD_GUI_DEPS )

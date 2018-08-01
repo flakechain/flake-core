@@ -1,3 +1,4 @@
+# Copyright (c) 2018, The Flakechain Project
 # Copyright (c) 2014-2018, The Monero Project
 #
 # All rights reserved.
@@ -105,5 +106,5 @@ target_link_libraries(daemon
     ${EXTRA_LIBRARIES})
 set_property(TARGET daemon
   PROPERTY
-    OUTPUT_NAME "monerod")
+    OUTPUT_NAME "flaked")
 install(TARGETS daemon DESTINATION bin)
