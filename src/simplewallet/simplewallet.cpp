@@ -1683,7 +1683,7 @@ bool simple_wallet::save_known_rings(const std::vector<std::string> &args)
 
 bool simple_wallet::version(const std::vector<std::string> &args)
 {
-  message_writer() << "Monero '" << MONERO_RELEASE_NAME << "' (v" << MONERO_VERSION_FULL << ")";
+  message_writer() << "Flakechain '" << MONERO_RELEASE_NAME << "' (v" << MONERO_VERSION_FULL << ")";
   return true;
 }
 
