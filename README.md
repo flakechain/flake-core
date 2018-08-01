@@ -16,11 +16,19 @@ To build and launch FlakeChain on POSIX compatible OS you need first setup requi
 
 ##### Ubuntu 18.04
 
+> You may need to install `sudo` with following command
+
+```bash
+$ apt install sudo
+``` 
+
 Open terminal session and run following commands or execute [requirements-ubuntu.sh](./bin/requirements-ubuntu.sh) file.
 
 ```bash
-# update apt sources on fresh system
+# update apt on fresh system and install git to clone source
 $ sudo apt update && apt upgrade
+
+# install dependencies
 $ sudo apt install \
     git-core \
     build-essential \
@@ -38,7 +46,12 @@ $ sudo apt install \
     libreadline-dev \
     libminiupnpc-dev \
     libzmq3-dev
+```
 
+```bash
+$ sudo apt update && apt upgrade && apt install git-core
+$ git clone --recursive https://github.com/flakechain/flake-core.git
+$ sudo sh ./flake-core/bin/requirements-ubuntu.sh
 ```
 
 ##### Another Distributives
@@ -51,7 +64,7 @@ $ sudo apt install \
 $ git clone --recursive https://github.com/flakechain/flake-core.git
 ```
 
-Or clone Git Submodules later (cloned Project before)
+Or clone Submodules later (Project was cloned earlier)
 
 ```bash
 $ cd flake-core && git submodule init && git submodule update
