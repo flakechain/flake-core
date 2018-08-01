@@ -408,14 +408,10 @@ namespace nodetool
     }
     else
     {
-      full_addrs.insert("107.152.130.98:18080");
-      full_addrs.insert("212.83.175.67:18080");
-      full_addrs.insert("5.9.100.248:18080");
-      full_addrs.insert("163.172.182.165:18080");
-      full_addrs.insert("161.67.132.39:18080");
-      full_addrs.insert("198.74.231.92:18080");
-      full_addrs.insert("195.154.123.123:18080");
-      full_addrs.insert("212.83.172.165:18080");
+      full_addrs.insert("188.35.187.49:12560");  // RED    .FLAKECHAIN
+      full_addrs.insert("188.35.187.51:12560");  // ORANGE .FLAKECHAIN
+      full_addrs.insert("185.185.68.247:12560"); // YELLOW .FLAKECHAIN
+      full_addrs.insert("209.177.91.251:12560"); // GREEN  .FLAKECHAIN
     }
     return full_addrs;
   }
@@ -439,7 +435,7 @@ namespace nodetool
     {
       memcpy(&m_network_id, &::config::stagenet::NETWORK_ID, 16);
       full_addrs = get_seed_nodes(cryptonote::STAGENET);
-    }
+    } 
     else
     {
       memcpy(&m_network_id, &::config::NETWORK_ID, 16);
