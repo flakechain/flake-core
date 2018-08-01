@@ -41,7 +41,6 @@ Open terminal session and run following commands or execute [requirements-ubuntu
 ```bash
 # update apt on fresh system and install git to clone source
 $ sudo apt update && apt upgrade
-
 # install dependencies
 $ sudo apt install \
     git-core \
@@ -99,6 +98,7 @@ pull any commit using
 # checkout branch smart-contracts-feature
 git checkout smart-contracts-feature
 
+```
 # checkout commit
 git checkout 61eea839786149e587f939bcdb1c40009638845f   
 ```

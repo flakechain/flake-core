@@ -3684,6 +3684,7 @@ leave:
 
   // appears to be a NOP *and* is called elsewhere.  wat?
   m_tx_pool.on_blockchain_inc(new_height, id);
+  get_difficulty_for_next_block(); // just to cache it
 
   return true;
 }
