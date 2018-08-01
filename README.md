@@ -98,7 +98,7 @@ pull any commit using
 # checkout branch smart-contracts-feature
 git checkout smart-contracts-feature
 
-```
+```bash
 # checkout commit
 git checkout 61eea839786149e587f939bcdb1c40009638845f   
 ```
