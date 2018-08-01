@@ -46,12 +46,18 @@ $ sudo apt install \
     libreadline-dev \
     libminiupnpc-dev \
     libzmq3-dev
+    
+# getting the source
+$ git clone --recursive https://github.com/flakechain/flake-core.git
 ```
+
+or
 
 ```bash
 $ sudo apt update && apt upgrade && apt install git-core
 $ git clone --recursive https://github.com/flakechain/flake-core.git
-$ sudo sh ./flake-core/bin/requirements-ubuntu.sh
+$ cd flake-core
+$ sudo sh ./bin/requirements-ubuntu.sh
 ```
 
 ##### Another Distributives
@@ -88,11 +94,16 @@ git checkout 61eea839786149e587f939bcdb1c40009638845f
 Just run `make` command from project root folder to launch Makefile wrapper for CMake or run standard CMake building flow
 
 ```bash
+$ make
+```
+
+or
+
+```bash
 $ mkdir build && cd build && cmake .. && make
 ```
 
 Wait until it finish compile and link tasks.
-
 
 ## Copyright
 
