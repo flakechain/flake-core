@@ -11,9 +11,13 @@ and nobody can trace your transfers unless you allow them to do so.
 ## Community
 
 [Github](https://github.com/flakechain)
+
 [Discord](https://discordapp.com/invite/NqgvVYT)
+
 [Telegram](https://t.me/flakechain)
+
 [BitcoinTalk](https://bitcointalk.org/index.php?topic=4453691)
+
 [Twitter](https://twitter.com/flakechain)
 
 ## Building from source
