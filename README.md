@@ -16,6 +16,11 @@ and nobody can trace your transfers unless you allow them to do so.
 - [BitcoinTalk](https://bitcointalk.org/index.php?topic=4453691)
 - [Twitter](https://twitter.com/flakechain)
 
+## Markets
+
+- [StocksExchange](https://app.stocks.exchange/en/basic-trade/pair/BTC/XSF/1D)
+- [MapleChange](https://maplechange.com/markets/xsfbtc?markets=all&column=name&order=asc&unit=volume&pinned=true)
+
 ## Building from source
 
 ### Prerequisite
