@@ -249,7 +249,7 @@ int main(int argc, char* argv[])
     "database", available_dbs.c_str(), default_db_type
   };
   const command_line::arg_descriptor<bool> arg_rct_only  = {"rct-only", "Only work on ringCT outputs", false};
-  const command_line::arg_descriptor<std::vector<std::string> > arg_inputs = {"inputs", "Path to Monero DB, and path to any fork DBs"};
+  const command_line::arg_descriptor<std::vector<std::string> > arg_inputs = {"inputs", "Path to Flakechain DB, and path to any fork DBs"};
 
   command_line::add_arg(desc_cmd_sett, arg_blackball_db_dir);
   command_line::add_arg(desc_cmd_sett, cryptonote::arg_testnet_on);
