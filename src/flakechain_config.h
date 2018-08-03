@@ -28,7 +28,7 @@
 #define FLAKE_GENESIS_TX                                ("010a01ff0001ffffffffffff0f029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd0880712101fbbddd38f518e908093781c1fd42242e426e77aa7fec4665e6dec8c7e3638fa8")
 #define FLAKE_GENESIS_NONCE                             (2018)
 // as we started in April 2018
-#define FLAKE_LAUNCH_TIMESTAMP                          (1530489606)
+#define FLAKE_LAUNCH_TIMESTAMP                          (1522320222)
 
-#define FLAKE_v2_HARD_FORK_BLOCK                        (100000)
-#define FLAKE_v2_HARD_FORK_TIMESTAMP                    (0)
+#define FLAKE8_BLOCK                                    (100000)
+#define FLAKE8_TIMESTAMP                                (0)
