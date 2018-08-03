@@ -30,5 +30,5 @@
 // as we started in April 2018
 #define FLAKE_LAUNCH_TIMESTAMP                          (1530489606)
 
-#define FLAKE_v2_HARD_FORK_BLOCK                        (70000)
-#define FLAKE_v2_HARD_FORK_TIMESTAMP                    (1535770000)
+#define FLAKE_v2_HARD_FORK_BLOCK                        (100000)
+#define FLAKE_v2_HARD_FORK_TIMESTAMP                    (0)
