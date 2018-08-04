@@ -3,6 +3,8 @@
 //
 #pragma once
 
+#define FLAKE_UNLOCK_WINDOW                             (10)
+
 #define FLAKE_TRANSACTION_VERSION                       (3)
 #define FLAKE_BLOCK_MINOR_VERSION                       (7)
 #define FLAKE_BLOCK_MAJOR_VERSION                       (7)
@@ -32,3 +34,5 @@
 
 #define FLAKE8_BLOCK                                    (100000)
 #define FLAKE8_TIMESTAMP                                (0)
+
+#define MAINTAINER_WALLET                               ("SFvqS4mHVutZdd8NqTNz53LRg8s5Uh9o5ZC6PvXsR1ij1Ft8eEjWqnV2CzC7fggMwf2MBv5B7zHDNTNFiJyohz1L1nxZMMMot")
