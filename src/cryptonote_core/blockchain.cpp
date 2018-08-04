@@ -95,10 +95,10 @@ static const struct {
   { 7, 1, 0, FLAKE_LAUNCH_TIMESTAMP },
 
   // version 8 starts from block 80000, which is on or around September, 2018.
-  { 2, FLAKE8_HARD_FORK_BLOCK, 0, FLAKE8_HARD_FORK_TIMESTAMP }
+  { 2, FLAKE8_HARD_FORK_BLOCK, 0, FLAKE8_TIMESTAMP }
 
 };
-static const uint64_t mainnet_hard_fork_version_1_till = FLAKE_v8_HARD_FORK_BLOCK;
+static const uint64_t mainnet_hard_fork_version_1_till = FLAKE8_BLOCK;
 
 static const struct {
   uint8_t version;
