@@ -2,7 +2,6 @@
 
 ###### FlakeChain is Monero v12 (Cryptonote v7) fork with Rich Ecosystem and Application Development Platform included
 
-![Flakechain](./assets/flake512x512.png)
 ![Frosty Flush v0.3.0.0](./assets/frosty-flush.png)
 
 ## Description
@@ -117,6 +116,8 @@ $ mkdir build && cd build && cmake .. && make
 ```
 
 Wait until it finish compile and link tasks.
+
+![Flakechain](./assets/flake512x512.png)
 
 ## Copyright
 
