@@ -9,10 +9,8 @@
 #include <string.h>
 
 #ifndef KECCAK_ROUNDS
-#define KECCAK_ROUNDS 24
+#define KECCAK_ROUNDS 48
 #endif
-
-#define KECCAK_3200_ROUNDS 48
 
 #ifndef ROTL64
 #define ROTL64(x, y) (((x) << (y)) | ((x) >> (64 - (y))))
