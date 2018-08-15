@@ -1,8 +1,28 @@
-# FlakeChain v0.3.0.0-beta
+# FlakeChain v0.3.0.1-alpha
 
-###### FlakeChain is Monero v12 (Cryptonote v7) fork with Rich Ecosystem and Application Development Platform included
+###### FlakeChain is Monero git trunk fork with Rich Ecosystem and Application Development Platform
 
-![Frosty Flush v0.3.0.0](./assets/frosty-flush.png)
+![Frosty Flush v0.3.0.1](./assets/frosty-flush.png)
+
+## Flakechain meets Homebrew
+
+### Installation from Brew
+
+#### Add Flakechain Keg
+
+```bash
+brew tap flakechain/flake-core
+```
+
+#### Install latest release
+
+```bash
+brew install -v flake-core
+```
+
+## Check out also
+
+# [Flake GUI](@flakechain/flake-gui)
 
 ## Features merged from Vanilla
 
