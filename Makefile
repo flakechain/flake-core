@@ -27,6 +27,8 @@
 # STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF
 # THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+VERSION="0.3.0"
+
 all: release-all
 
 cmake-debug:
@@ -64,6 +66,15 @@ cmake-release:
 
 release: cmake-release
 	cd build/release && $(MAKE)
+
+install: release
+	mkdir -p /opt/flakechain/$(VERSION)
+	cp -r build/release/bin /opt/flakechain/$(VERSION)/
+	@echo "Add following line to Your .rc file (~/.bashrc)"
+	@echo 'export PATH=/opt/flakechain/'$(VERSION)'/bin:$$PATH'
+
+uninstall:
+	rm -rf /opt/flakechain/$(VERSION)
 
 release-test:
 	mkdir -p build/release
