@@ -2990,7 +2990,7 @@ void BlockchainLMDB::set_batch_transactions(bool batch_transactions)
 //    LOG_PRINT_L0("WARNING: batch transaction mode already enabled, but asked to enable batch mode");
   }
   m_batch_transactions = batch_transactions;
-  LOG_PRINT_L3("batch transactions " << (m_batch_transactions ? "enabled" : "disabled"));
+  MINFO("batch transactions " << (m_batch_transactions ? "enabled" : "disabled"));
 }
 
 // return true if we started the txn, false if already started
