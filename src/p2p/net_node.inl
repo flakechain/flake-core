@@ -411,7 +411,9 @@ namespace nodetool
       full_addrs.insert("188.35.187.49:12560");  // RED    .FLAKECHAIN
       full_addrs.insert("188.35.187.51:12560");  // ORANGE .FLAKECHAIN
       full_addrs.insert("185.185.68.247:12560"); // YELLOW .FLAKECHAIN
-      full_addrs.insert("209.177.91.251:12560"); // GREEN  .FLAKECHAIN
+      full_addrs.insert("54.213.236.83:12560");  // AWS    .TROUBLESOME
+      full_addrs.insert("54.244.21.125:12560");  // RED    .LIGHTSAIL
+//      full_addrs.insert("18.219.145.107:12560"); // AWS  .PITCHIE
     }
     return full_addrs;
   }

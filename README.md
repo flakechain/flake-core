@@ -1,8 +1,77 @@
-# FlakeChain v0.3.0-alpha   
+# FlakeChain v0.3.0.1-alpha
 
-###### FlakeChain is Monero v12 (Cryptonote v7) fork with Rich Ecosystem and Application Development Platform included
+###### FlakeChain is Monero git trunk fork with Rich Ecosystem and Application Development Platform
 
-![Flakechain](./assets/flake1024x1024.png)
+![Frosty Flush v0.3.0.1](./assets/frosty-flush.png)
+
+## Flakechain meets Homebrew
+
+### Installation from Brew
+
+#### Add Flakechain Keg
+
+```bash
+brew tap flakechain/flake-core
+```
+
+#### Install latest release
+
+```bash
+brew install -v flake-core
+```
+
+## Check out also
+
+# [Flake GUI](@flakechain/flake-gui)
+
+## Features merged from Vanilla
+
+ - tweaked PoW to block DoS attacks from ASICs
+ - added input ordering to prevent wallet inference
+ - increased minimum ring size from 5 to 7
+ - subaddress support added, with addresses starting with a prefix of 8
+ - added multisig support
+ - added support for SunOS / Solaris
+ - initial support for Ledger Nano S hardware wallet
+ - added seed encryption by password
+ - securely erase keys from memory, for most cases, when no longer in use
+ - initial Bulletproofs implementation live on testnet
+ - added accounts, tags, and labels, via subaddresses
+ - added initial, quite rough support for 0MQ
+ - added some mitigations for privacy-threatening key reusing forks
+ - added a new network, stagenet, which mirrors mainnet's features
+ - added SSL support for light wallet API
+ - added CORS support to the RPC stack
+ - added a --generate-from-spend-key flag to the CLI wallet
+ - added a --disable-dns-checkpoints flag to the daemon
+ - massive improvements to build hardening
+ - added native fuzz testing for user input
+ - added the ability to limit inbound connections
+ - enabled "fluffy blocks" by default
+ - added a --max-txpool-size mempool size limit flag
+ - allow a remote node to temporarily process RPC requests during IBD
+ - added a relay_tx command to the RPC wallet
+ - allow for spend key retrieval via RPC wallet call
+ - made libraries use position independent code
+ - improvements made to Docker image
+ - added a sweep_single command to the CLI wallet
+ - made RPC error codes more specific
+ - improved stack trace printing, and noted stack trace lib in output
+ - split and refactored wallet_api from wallet code
+ - added priority arguments to sweep_all and donate CLI wallet commands
+ - added a --do-not-relay option to the CLI wallet
+ - made the hashchain unit tests work again
+ - added tests for subaddress expansion
+ - added RingCT performance tests
+ - added package installation instructions for Void Linux
+ - made changes to ensure no sensitive data is logged accidentally
+ - added a Croatian mnemonic word list
+ - added a Lojban mnemonic word list
+ - added a Swedish CLI translation
+ - added stoffu's GPG key to the source code
+ - added an timeoue for connections which don't complete a handshake
+ - moved test building to the end of the CMake build process
+ - as always, loads of bug fixes and performance improvements
 
 ## Description
 
@@ -97,8 +166,6 @@ pull any commit using
 ```bash
 # checkout branch smart-contracts-feature
 git checkout smart-contracts-feature
-
-```
 # checkout commit
 git checkout 61eea839786149e587f939bcdb1c40009638845f   
 ```
@@ -118,6 +185,8 @@ $ mkdir build && cd build && cmake .. && make
 ```
 
 Wait until it finish compile and link tasks.
+
+![Flakechain](./assets/flake512x512.png)
 
 ## Copyright
 

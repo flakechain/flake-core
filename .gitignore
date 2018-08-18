@@ -3,6 +3,7 @@
 /build
 /tags
 log/
+data/
 
 # vim swap files
 *.swp

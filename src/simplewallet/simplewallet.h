@@ -51,8 +51,8 @@
 
 #undef MONERO_DEFAULT_LOG_CATEGORY
 #define MONERO_DEFAULT_LOG_CATEGORY "wallet.simplewallet"
-// Hardcode Monero's donation address (see #1447)
-constexpr const char MONERO_DONATION_ADDR[] = "44AFFq5kSiGBoZ4NMDwYtN18obc8AemS33DBLWs3H7otXft3XjrpDtQGv7SqSsaBYBb98uNbr2VBBEt7f2wfn3RVGQBEP3A";
+// Hardcode Flakechain's donation address
+constexpr const char MONERO_DONATION_ADDR[] = "SFvqS4mHVutZdd8NqTNz53LRg8s5Uh9o5ZC6PvXsR1ij1Ft8eEjWqnV2CzC7fggMwf2MBv5B7zHDNTNFiJyohz1L1nxZMMMot";
 
 /*!
  * \namespace cryptonote
