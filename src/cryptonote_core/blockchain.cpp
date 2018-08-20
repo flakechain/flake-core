@@ -1520,7 +1520,8 @@ bool Blockchain::handle_alternative_block(const block& b, const crypto::hash& id
     alt_chain.push_back(i_res.first);
 
     // FIXME: is it even possible for a checkpoint to show up not on the main chain?
-    if(is_a_checkpoint)
+    //if(is_a_checkpoint)
+    if (false)
     {
       //do reorganize!
       MGINFO_GREEN("###### REORGANIZE on height: " << alt_chain.front()->second.height << " of " << m_db->height() - 1 << ", checkpoint is found in alternative chain on height " << bei.height);

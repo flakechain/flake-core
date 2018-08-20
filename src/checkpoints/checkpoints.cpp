@@ -96,6 +96,7 @@ namespace cryptonote
   //---------------------------------------------------------------------------
   bool checkpoints::check_block(uint64_t height, const crypto::hash& h, bool& is_a_checkpoint) const
   {
+    is_a_checkpoint = false; // !!!
     return true; // FIXME
     auto it = m_points.find(height);
     is_a_checkpoint = it != m_points.end();
