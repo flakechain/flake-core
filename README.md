@@ -1,4 +1,4 @@
-# FlakeChain v0.4.0-alpha.0
+# FlakeChain v0.4.0-alpha.3
 
 <img alt="FlakeChain Master Branch Build Status" src="https://travis-ci.org/flakechain/flake-core.svg?branch=master" />
 
