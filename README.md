@@ -6,7 +6,7 @@
 
 ## Travis CI Status
 
-[!Travis CI Master Branch Build](https://travis-ci.org/flakechain/flake-core.svg?branch=master)
+<img alt="FlakeChain Master Branch Build Status" src="https://travis-ci.org/flakechain/flake-core.svg?branch=master" />
 
 ## Installation from Brew (unstable)
 
