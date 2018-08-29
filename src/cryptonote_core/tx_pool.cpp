@@ -103,7 +103,7 @@ namespace cryptonote
   }
   //---------------------------------------------------------------------------------
   //---------------------------------------------------------------------------------
-  tx_memory_pool::tx_memory_pool(Blockchain& bchs): m_blockchain(bchs), m_txpool_max_size(DEFAULT_TXPOOL_MAX_SIZE), m_txpool_size(0)
+  tx_memory_pool::tx_memory_pool(Blockchain& bchs): m_blockchain(bchs), m_txpool_max_size(DEFAULT_TXPOOL_MAX_SIZE), m_txpool_size(0), m_cookie(0)
   {
 
   }
@@ -307,6 +307,8 @@ namespace cryptonote
     tvc.m_verifivation_failed = false;
     m_txpool_size += blob_size;
 
+    ++m_cookie;
+
     MINFO("Transaction added to pool: txid " << id << " bytes: " << blob_size << " fee/byte: " << (fee / (double)blob_size));
 
     prune(m_txpool_max_size);
@@ -342,6 +344,7 @@ namespace cryptonote
       bytes = m_txpool_max_size;
     CRITICAL_REGION_LOCAL1(m_blockchain);
     LockedTXN lock(m_blockchain);
+    bool changed = false;
 
     // this will never remove the first one, but we don't care
     auto it = --m_txs_by_fee_and_receive_time.end();
@@ -378,6 +381,7 @@ namespace cryptonote
         remove_transaction_keyimages(tx);
         MINFO("Pruned tx " << txid << " from txpool: size: " << it->first.second << ", fee/byte: " << it->first.first);
         m_txs_by_fee_and_receive_time.erase(it--);
+        changed = true;
       }
       catch (const std::exception &e)
       {
@@ -385,6 +389,8 @@ namespace cryptonote
         return;
       }
     }
+    if (changed)
+      ++m_cookie;
     if (m_txpool_size > bytes)
       MINFO("Pool size after pruning is larger than limit: " << m_txpool_size << "/" << bytes);
   }
@@ -402,6 +408,7 @@ namespace cryptonote
       auto ins_res = kei_image_set.insert(id);
       CHECK_AND_ASSERT_MES(ins_res.second, false, "internal error: try to insert duplicate iterator in key_image set");
     }
+    ++m_cookie;
     return true;
   }
   //---------------------------------------------------------------------------------
@@ -436,6 +443,7 @@ namespace cryptonote
       }
 
     }
+    ++m_cookie;
     return true;
   }
   //---------------------------------------------------------------------------------
@@ -481,6 +489,7 @@ namespace cryptonote
     }
 
     m_txs_by_fee_and_receive_time.erase(sorted_it);
+    ++m_cookie;
     return true;
   }
   //---------------------------------------------------------------------------------
@@ -554,6 +563,7 @@ namespace cryptonote
           // ignore error
         }
       }
+      ++m_cookie;
     }
     return true;
   }
@@ -1052,6 +1062,7 @@ namespace cryptonote
   {
     CRITICAL_REGION_LOCAL(m_transactions_lock);
     CRITICAL_REGION_LOCAL1(m_blockchain);
+    bool changed = false;
     LockedTXN lock(m_blockchain);
     for(size_t i = 0; i!= tx.vin.size(); i++)
     {
@@ -1072,6 +1083,7 @@ namespace cryptonote
           {
             MDEBUG("Marking " << txid << " as double spending " << itk.k_image);
             meta.double_spend_seen = true;
+            changed = true;
             try
             {
               m_blockchain.update_txpool_tx(txid, meta);
@@ -1085,6 +1097,8 @@ namespace cryptonote
         }
       }
     }
+    if (changed)
+      ++m_cookie;
   }
   //---------------------------------------------------------------------------------
   std::string tx_memory_pool::print_pool(bool short_format) const
@@ -1306,6 +1320,8 @@ namespace cryptonote
         }
       }
     }
+    if (n_removed > 0)
+      ++m_cookie;
     return n_removed;
   }
   //---------------------------------------------------------------------------------
@@ -1362,6 +1378,10 @@ namespace cryptonote
         }
       }
     }
+
+    m_cookie = 0;
+
+    // Ignore deserialization error
     return true;
   }
 
