@@ -1,4 +1,13 @@
 os: Visual Studio 2015
+version: 0.4.0-alpha-{build}
+
+clone_folder: c:\Projects\flake-core
+
+branches:
+    only:
+        - master
+        
+configuration: Release
 
 environment:
   BOOST_ROOT: C:\Libraries\boost_1_67_0
@@ -8,7 +17,7 @@ build_script:
 - md build
 - cd build
 - cmake -G "Visual Studio 14 Win64" ..
-- MSBuild FlakeChain.sln /p:Configuration=Release /m
+- MSBuild flake-core.sln /p:Configuration=Release /m
 
 after_build:
 - cd src\Release
