@@ -4,9 +4,11 @@
 
 ![Frosty Flush v0.3.0.1](./assets/frosty-flush.png)
 
-## Flakechain meets Homebrew
+## Travis CI Status
 
-### Installation from Brew
+[!Travis CI Master Branch Build](https://travis-ci.org/flakechain/flake-core.svg?branch=master)
+
+## Installation from Brew (unstable)
 
 #### Add Flakechain Keg
 
