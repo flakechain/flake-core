@@ -2,7 +2,6 @@ language: cpp
 os: linux
 dist: trusty
 sudo: false
-
 matrix:
   include:
   - env: COMPILER=g++ BUILD=Release STANDARD=14
@@ -11,8 +10,8 @@ matrix:
       apt:
         update: true
         sources:
-        - sourceline: 'ppa:mhier/libboost-latest'
-        - sourceline: 'ppa:chris-lea/libsodium'
+        - sourceline: ppa:mhier/libboost-latest
+        - sourceline: ppa:chris-lea/libsodium
         - ubuntu-toolchain-r-test
         packages:
         - build-essential
@@ -27,6 +26,21 @@ matrix:
         - libldns-dev
         - libexpat1-dev
         - libpcsclite-dev
-
 script:
 - make
+before_deploy:
+- cd build/release/bin
+- mkdir flakechain-${TRAVIS_TAG}/
+- mv flake-* flakechain-${TRAVIS_TAG}/
+- cp ../../LICENSE flakechain-${TRAVIS_TAG}/
+- tar cvzf flakechain-${TRAVIS_TAG}-${LABEL}.tar.bz2 flakechain-${TRAVIS_TAG}/
+
+deploy:
+  provider: releases
+  api_key:
+    secure: Ab2iRf8k0mmq8JLXD7G5EuW6y9gHEs84JLbnOTrBNsbGPrM7GPutzEZOB7G2PkOM+w80x7Xm7x5h1a0qO+gxbuvX2G9bgbgDXbEWq5XEUuJsfuVKFtnToSd2Gvdq7PDYhe1ZIEUY9iZYX5A/igIaYV/cvPq6tpRNFABFMw9i3MCisFSC0YbmfWBOhBXOzgpwBRMqsuCMNSo4tXtXVWqCROUF81LIiyX8g1FO6feBQbxhjHLAKZyGLCR/RTfc02oWDMgsN82O8MaDVgR345HfrUVfK55w+zYjND9WjugfwDhwpYvxBWV7Bh387lUrWk//NGhAJW4DfplwQhIh/uHPSn2aMbuQF5ja/elQ4DXCDjakQ8LiNaS9Eh8PGef/ANw+lwf+UiiliIbX+yC4EszL964IAv6FT5mGub7RUyknB//yUwoUv069DKdpYpxbhxYjm5D5OAyJ59rLi+5WbC4C8LbwYsLOPK6QfLuaIvdICr0gysKouLnxd68tTYkdj2HoFWFjawn//dQGb1ntlxrm9+oJU4gI1qrzGtDeb+WTlLp8MJ2Vl3hUKBjGxn/bddcdzLZyiykZiGFE/ICwGbq5jYVDk0Fu8Cqvtd4oGmOTIBsG4MA4LnQgjpmn+TlL0FZQ4I/8OAABSJKRpsrRJwYIdz27yHHp/ivtuvKtwAPz1Qk=
+  file: flakechain-${TRAVIS_TAG}-${LABEL}.tar.bz2
+  skip_cleanup: true
+  on:
+    repo: flakechain/flake-core
+    tags: true
