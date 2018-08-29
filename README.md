@@ -1,6 +1,6 @@
-# FlakeChain v0.3.0.1-alpha
+# FlakeChain v0.4.0-alpha.0
 
-###### FlakeChain is Monero git trunk fork with Rich Ecosystem and Application Development Platform
+###### FlakeChain is Monero git trunk fork with Ecosystem and REST API to Blockchain
 
 ![Frosty Flush v0.3.0.1](./assets/frosty-flush.png)
 
@@ -184,7 +184,7 @@ $ mkdir build && cd build && cmake .. && make
 
 Wait until it finish compile and link tasks.
 
-![Flakechain](./assets/flake512x512.png)
+![Flakechain](./assets/v0.4.0/icon@1024.png)
 
 ## Copyright
 
