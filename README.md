@@ -4,11 +4,11 @@
 
 ![Frosty Flush v0.3.0.1](./assets/frosty-flush.png)
 
-## Travis CI Status
+### Travis CI Status
 
 <img alt="FlakeChain Master Branch Build Status" src="https://travis-ci.org/flakechain/flake-core.svg?branch=master" />
 
-## Installation from Brew (unstable)
+### Installation from Brew (unstable)
 
 #### Add Flakechain Keg
 
@@ -22,11 +22,7 @@ brew tap flakechain/flake-core
 brew install -v flake-core
 ```
 
-## Check out also
-
-# [Flake GUI](@flakechain/flake-gui)
-
-## Features merged from Vanilla
+## Changelog
 
  - tweaked PoW to block DoS attacks from ASICs
  - added input ordering to prevent wallet inference
