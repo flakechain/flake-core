@@ -1,21 +1,21 @@
-// Copyright (c) 2017-2018, The Monero Project
-//
+// Copyright (c) 2014-2018, The Monero Project
+// 
 // All rights reserved.
-//
+// 
 // Redistribution and use in source and binary forms, with or without modification, are
 // permitted provided that the following conditions are met:
-//
+// 
 // 1. Redistributions of source code must retain the above copyright notice, this list of
 //    conditions and the following disclaimer.
-//
+// 
 // 2. Redistributions in binary form must reproduce the above copyright notice, this list
 //    of conditions and the following disclaimer in the documentation and/or other
 //    materials provided with the distribution.
-//
+// 
 // 3. Neither the name of the copyright holder nor the names of its contributors may be
 //    used to endorse or promote products derived from this software without specific
 //    prior written permission.
-//
+// 
 // THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY
 // EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
 // MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL
@@ -25,46 +25,48 @@
 // INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
 // STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF
 // THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+// 
+// Parts of this file are originally copyright (c) 2012-2013 The Cryptonote developers
 
 #pragma once
 
-#include <array>
-#include <cstdint>
-#include <iosfwd>
-#include <string>
+#include <string.h>
+#include <sodium/crypto_verify_32.h>
 
-#include "wipeable_string.h"
-#include "span.h"
-
-namespace epee
+struct memcmp32
 {
-  struct to_hex
+  static const size_t loop_count = 1000000000;
+  static int call(const unsigned char *k0, const unsigned char *k1){ return memcmp(k0, k1, 32); }
+};
+
+struct verify32
+{
+  static const size_t loop_count = 10000000;
+  static int call(const unsigned char *k0, const unsigned char *k1){ return crypto_verify_32(k0, k1); }
+};
+
+template<typename f, bool equal>
+class test_equality
+{
+public:
+  static const size_t loop_count = f::loop_count;
+
+  bool init()
   {
-    //! \return A std::string containing hex of `src`.
-    static std::string string(const span<const std::uint8_t> src);
-    //! \return A epee::wipeable_string containing hex of `src`.
-    static epee::wipeable_string wipeable_string(const span<const std::uint8_t> src);
+    for (int n = 0; n < 32; ++n)
+      k0[n] = n;
+    for (int n = 0; n < 32; ++n)
+      k1[n] = equal ? n : n + 1;
+    return true;
+  }
 
-    //! \return An array containing hex of `src`.
-    template<std::size_t N>
-    static std::array<char, N * 2> array(const std::array<std::uint8_t, N>& src) noexcept
-    {
-      std::array<char, N * 2> out{{}};
-      static_assert(N <= 128, "keep the stack size down");
-      buffer_unchecked(out.data(), {src.data(), src.size()});
-      return out;
-    }
+  bool test()
+  {
+    return equal == !f::call(k0, k1);
+  }
 
-    //! Append `src` as hex to `out`.
-    static void buffer(std::ostream& out, const span<const std::uint8_t> src);
+private:
+  unsigned char k0[32];
+  unsigned char k1[32];
+};
 
-    //! Append `< + src + >` as hex to `out`.
-    static void formatted(std::ostream& out, const span<const std::uint8_t> src);
-
-  private:
-    template<typename T> T static convert(const span<const std::uint8_t> src);
-
-    //! Write `src` bytes as hex to `out`. `out` must be twice the length
-    static void buffer_unchecked(char* out, const span<const std::uint8_t> src) noexcept;
-  };
-}

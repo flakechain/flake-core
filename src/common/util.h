@@ -150,6 +150,8 @@ namespace tools
 
   bool sanitize_locale();
 
+  bool disable_core_dumps();
+
   bool on_startup();
 
   /*! \brief Defines a signal handler for win32 and *nix
