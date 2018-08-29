@@ -9,7 +9,7 @@ matrix:
         sources:
         - ubuntu-toolchain-r-test
         packages:
-        - libboost1.67-all-dev
+        - libboost1.58-all-dev
     env:
     - MATRIX_EVAL="CC=gcc && CXX=g++"
     - LABEL="linux"
