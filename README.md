@@ -1,11 +1,12 @@
-# FlakeChain v0.4.0-alpha.3
+# FlakeChain v0.4.0
 
-<img alt="FlakeChain Master Branch Build Status" src="https://travis-ci.org/flakechain/flake-core.svg?branch=master" />
+<img alt="FlakeChain Build Status" src="https://travis-ci.org/flakechain/flake-core.svg?branch=master" />
 
 ###### FlakeChain is Monero git trunk fork with Ecosystem and REST API to Blockchain
 
 ![Frosty Flush v0.3.0.1](./assets/frosty-flush.png)
 
+<!--
 ### Installation from Brew (unstable)
 
 #### Add Flakechain Keg
@@ -19,6 +20,7 @@ brew tap flakechain/flake-core
 ```bash
 brew install -v flake-core
 ```
+-->
 
 ## Changelog
 
