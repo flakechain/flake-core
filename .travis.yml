@@ -3,32 +3,38 @@ os: linux
 dist: trusty
 sudo: false
 if: tag IS present
-matrix:
-  include:
-  - env: COMPILER=g++ BUILD=Release STANDARD=14
-    compiler: gcc
-    addons:
-      apt:
-        update: true
-        sources:
-        - sourceline: ppa:mhier/libboost-latest
-        - sourceline: ppa:chris-lea/libsodium
-        - ubuntu-toolchain-r-test
-        packages:
-        - build-essential
-        - boost1.67
-        - libzmq3-dev
-        - libsodium-dev
-        - libpgm-dev
-        - libunwind8-dev
-        - libunbound-dev
-        - liblzma-dev
-        - libreadline6-dev
-        - libldns-dev
-        - libexpat1-dev
-        - libpcsclite-dev
+
+addons:
+  apt:
+    update: true
+    sources:
+    - sourceline: ppa:mhier/libboost-latest
+    - sourceline: ppa:chris-lea/libsodium
+    - ubuntu-toolchain-r-test
+    packages:
+    - gcc-7
+    - g++-7
+    - build-essential
+    - boost1.67
+    - libzmq3-dev
+    - libsodium-dev
+    - libpgm-dev
+    - libunwind8-dev
+    - libunbound-dev
+    - liblzma-dev
+    - libreadline6-dev
+    - libldns-dev
+    - libexpat1-dev
+    - libpcsclite-dev
+
 script:
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
+    export CC=gcc-7 ;
+    export CXX=g++-7 ;
+    # source /opt/qt510/bin/qt510-env.sh ;
+    fi
 - make
+
 before_deploy:
 - cd build/release/bin
 - mkdir flakechain-${TRAVIS_TAG}/
