@@ -14,9 +14,18 @@ matrix:
         - sourceline: 'ppa:mhier/libboost-latest'
         - ubuntu-toolchain-r-test
         packages:
-        - g++
+        - build-essential
         - boost1.67
         - libzmq3-dev
+        - libsodium-dev
+        - libpgm-dev
+        - libunwind8-dev
+        - libunbound-dev
+        - liblzma-dev
+        - libreadline6-dev
+        - libldns-dev
+        - libexpat1-dev
+        - libpcsclite-dev
 
 script:
 - make
