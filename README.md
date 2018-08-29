@@ -1,14 +1,10 @@
 # FlakeChain v0.4.0-alpha.0
 
-## URGENT FIX IF STUCK and NEWEST SOURCES
+<img alt="FlakeChain Master Branch Build Status" src="https://travis-ci.org/flakechain/flake-core.svg?branch=master" />
 
 ###### FlakeChain is Monero git trunk fork with Ecosystem and REST API to Blockchain
 
 ![Frosty Flush v0.3.0.1](./assets/frosty-flush.png)
-
-### Travis CI Status
-
-<img alt="FlakeChain Master Branch Build Status" src="https://travis-ci.org/flakechain/flake-core.svg?branch=master" />
 
 ### Installation from Brew (unstable)
 
