@@ -1,22 +1,21 @@
-sudo: false
 language: cpp
+os: linux
+dist: trusty
+sudo: false
 
 matrix:
   include:
-  - os: linux
+  - env: COMPILER=g++-6 BUILD=Release STANDARD=14
+    compiler: gcc
     addons:
       apt:
+        update: true
         sources:
+        - sourceline: 'ppa:mhier/libboost-latest'
         - ubuntu-toolchain-r-test
         packages:
-        - libboost1.55-all-dev
-    env:
-    - MATRIX_EVAL="CC=gcc && CXX=g++"
-    - LABEL="linux"
-    - STRIP="strip"
-
-before_install:
-- eval $MATRIX_EVAL
+        - g++-6
+        - boost1.67
 
 script:
 - make
