@@ -3,6 +3,8 @@
 //
 #pragma once
 
+#define FLAKE_RELEASE_NAME                              ("Hurting Heat")
+
 #define FLAKE_UNLOCK_WINDOW                             (10)
 
 #define FLAKE_TRANSACTION_VERSION                       (3)
