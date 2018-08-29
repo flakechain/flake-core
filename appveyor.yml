@@ -1,0 +1,21 @@
+os: Visual Studio 2015
+
+environment:
+  BOOST_ROOT: C:\Libraries\boost_1_67_0
+  BOOST_LIBRARYDIR: C:\Libraries\boost_1_67_0\lib64-msvc-14
+
+build_script:
+- md build
+- cd build
+- cmake -G "Visual Studio 14 Win64" ..
+- MSBuild FlakeChain.sln /p:Configuration=Release /m
+
+after_build:
+- cd src\Release
+- mkdir flakechain-%APPVEYOR_BUILD_NUMBER%
+- copy *.exe flakechain-%APPVEYOR_BUILD_NUMBER%
+- 7z a flakechain-%APPVEYOR_BUILD_NUMBER%-windows.zip flakechain-%APPVEYOR_BUILD_NUMBER%
+
+artifacts:
+- path: flakechain-%APPVEYOR_BUILD_NUMBER%-windows.zip
+  name: FlakechainRelease
