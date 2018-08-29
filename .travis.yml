@@ -12,6 +12,7 @@ matrix:
         update: true
         sources:
         - sourceline: 'ppa:mhier/libboost-latest'
+        - sourceline: 'ppa:chris-lea/libsodium'
         - ubuntu-toolchain-r-test
         packages:
         - build-essential

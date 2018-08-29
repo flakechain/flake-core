@@ -1,5 +1,7 @@
 # FlakeChain v0.4.0-alpha.0
 
+## URGENT FIX IF STUCK and NEWEST SOURCES
+
 ###### FlakeChain is Monero git trunk fork with Ecosystem and REST API to Blockchain
 
 ![Frosty Flush v0.3.0.1](./assets/frosty-flush.png)
