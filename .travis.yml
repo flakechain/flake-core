@@ -5,7 +5,7 @@ sudo: false
 
 matrix:
   include:
-  - env: COMPILER=g++-6 BUILD=Release STANDARD=14
+  - env: COMPILER=g++ BUILD=Release STANDARD=14
     compiler: gcc
     addons:
       apt:
@@ -14,8 +14,9 @@ matrix:
         - sourceline: 'ppa:mhier/libboost-latest'
         - ubuntu-toolchain-r-test
         packages:
-        - g++-6
+        - g++
         - boost1.67
+        - libzmq3-dev
 
 script:
 - make
