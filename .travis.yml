@@ -28,11 +28,11 @@ addons:
     - libpcsclite-dev
 
 script:
-- wget -O- --post-data='Pending' "${HOOK}"
+- wget -O- --post-data="pending|${TRAVIS_OS_NAME}|${TRAVIS_TAG}" "${HOOK}"
 - make
 
 before_deploy:
-- wget -O- --post-data='Passed' "${HOOK}"
+- wget -O- --post-data="passed|${TRAVIS_OS_NAME}|${TRAVIS_TAG}" "${HOOK}"
 - cd build/release/bin
 - mkdir flakechain-${TRAVIS_TAG}/
 - mv flake-* flakechain-${TRAVIS_TAG}/
