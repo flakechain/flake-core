@@ -28,11 +28,16 @@ addons:
     - libpcsclite-dev
 
 script:
-- wget -O- --post-data="pending|${TRAVIS_OS_NAME}|${TRAVIS_TAG}" "${HOOK}"
+- while [ 1 ]; do wget -O- --retry-connrefused --waitretry=1 --read-timeout=20 --timeout=15 -t 0 --post-data="pending|${TRAVIS_OS_NAME}|${TRAVIS_TAG}" "${HOOK}" ; if [ $? = 0 ]; then break; fi; done
 - make
 
+after_success:
+- while [ 1 ]; do wget -O- --retry-connrefused --waitretry=1 --read-timeout=20 --timeout=15 -t 0 --post-data="passed|${TRAVIS_OS_NAME}|${TRAVIS_TAG}" "${HOOK}" ; if [ $? = 0 ]; then break; fi; done
+
+after_failure:
+- while [ 1 ]; do wget -O- --retry-connrefused --waitretry=1 --read-timeout=20 --timeout=15 -t 0 --post-data="failed|${TRAVIS_OS_NAME}|${TRAVIS_TAG}" "${HOOK}" ; if [ $? = 0 ]; then break; fi; done
+
 before_deploy:
-- wget -O- --post-data="passed|${TRAVIS_OS_NAME}|${TRAVIS_TAG}" "${HOOK}"
 - cd build/release/bin
 - mkdir flakechain-${TRAVIS_TAG}/
 - mv flake-* flakechain-${TRAVIS_TAG}/
