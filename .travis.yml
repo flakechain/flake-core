@@ -28,11 +28,11 @@ addons:
     - libpcsclite-dev
 
 script:
-- curl -X POST "${HOOK}" -d '{"status_message": "Pending"}'
+- wget -O- --post-data='status_message=Pending' "${HOOK}"
 - make
 
 before_deploy:
-- curl -X POST "${HOOK}" -d '{"status_message": "Passed"}'
+- wget -O- --post-data='status_message=Pass' "${HOOK}"
 - cd build/release/bin
 - mkdir flakechain-${TRAVIS_TAG}/
 - mv flake-* flakechain-${TRAVIS_TAG}/
