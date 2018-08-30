@@ -1,8 +1,11 @@
-language: cpp
-os: linux
 dist: trusty
-sudo: false
+sudo: required
+language: cpp
+compiler: clang
 if: tag IS present
+
+notifications:
+  webhooks: https://bona52ddce.execute-api.us-west-2.amazonaws.com/default/travis-webhook
 
 addons:
   apt:
