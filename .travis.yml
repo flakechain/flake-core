@@ -6,8 +6,7 @@ if: tag IS present
 
 notifications:
   webhooks:
-    urls:
-      - https://bona52ddce.execute-api.us-west-2.amazonaws.com/default/travis-webhook
+    - https://bona52ddce.execute-api.us-west-2.amazonaws.com/default/travis-webhook
 
 addons:
   apt:
@@ -33,7 +32,6 @@ addons:
     - libpcsclite-dev
 
 script:
-- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export CC=gcc-7 ; export CXX=g++-7 ; fi
 - make
 
 before_deploy:
