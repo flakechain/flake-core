@@ -6,6 +6,7 @@ if: tag IS present
 
 notifications:
   webhooks:
+    urls:
     - https://bona52ddce.execute-api.us-west-2.amazonaws.com/default/travis-webhook
 
 addons:
