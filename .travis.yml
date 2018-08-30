@@ -33,11 +33,7 @@ addons:
     - libpcsclite-dev
 
 script:
-- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
-    export CC=gcc-7 ;
-    export CXX=g++-7 ;
-    # source /opt/qt510/bin/qt510-env.sh ;
-    fi
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export CC=gcc-7 ; export CXX=g++-7 ; fi
 - make
 
 before_deploy:
