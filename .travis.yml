@@ -4,10 +4,6 @@ language: cpp
 compiler: clang
 if: tag IS present
 
-notifications:
-  webhooks:
-    - https://bona52ddce.execute-api.us-west-2.amazonaws.com/default/travis-webhook
-
 addons:
   apt:
     update: true
@@ -32,9 +28,11 @@ addons:
     - libpcsclite-dev
 
 script:
+- curl -X POST "${HOOK}" -d '{"status_message": "Pending"}'
 - make
 
 before_deploy:
+- curl -X POST "${HOOK}" -d '{"status_message": "Passed"}'
 - cd build/release/bin
 - mkdir flakechain-${TRAVIS_TAG}/
 - mv flake-* flakechain-${TRAVIS_TAG}/
