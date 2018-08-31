@@ -40,7 +40,7 @@ if (IOS)
     INCLUDE(CmakeLists_IOS.txt)
 endif()
 
-cmake_minimum_required(VERSION 2.8.7)
+cmake_minimum_required(VERSION 3.0)
 
 project(flakechain)
 
@@ -262,7 +262,8 @@ if(APPLE)
 endif()
 
 if(MSVC OR MINGW)
-  set(DEFAULT_STATIC true)
+  # set(DEFAULT_STATIC true)
+  set(DEFAULT_STATIC false)
 else()
   set(DEFAULT_STATIC false)
 endif()
@@ -798,7 +799,7 @@ if(STATIC)
   set(Boost_USE_STATIC_LIBS ON)
   set(Boost_USE_STATIC_RUNTIME ON)
 endif()
-find_package(Boost 1.58 QUIET REQUIRED COMPONENTS system filesystem thread date_time chrono regex serialization program_options locale)
+find_package(Boost 1.67 QUIET REQUIRED COMPONENTS system filesystem thread date_time chrono regex serialization program_options locale)
 
 set(CMAKE_FIND_LIBRARY_SUFFIXES ${OLD_LIB_SUFFIXES})
 if(NOT Boost_FOUND)
