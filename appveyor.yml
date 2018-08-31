@@ -13,6 +13,9 @@ environment:
   BOOST_ROOT: C:\Libraries\boost_1_67_0
   BOOST_LIBRARYDIR: C:\Libraries\boost_1_67_0\lib64-msvc-17
 
+install:
+- git submodule update --init --recursive
+
 build_script:
 - echo "Starting build"
 - md build
@@ -24,7 +27,7 @@ build_script:
 - dir
 - echo "MSBuild call"
 - MSBuild flake-core.sln /p:Configuration=Release /m
- 
+
 after_build:
 - cd src\Release
 - mkdir flakechain-%APPVEYOR_BUILD_NUMBER%
