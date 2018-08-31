@@ -4,7 +4,25 @@
 
 ###### FlakeChain is Monero git trunk fork with Ecosystem and REST API to Blockchain
 
-![Frosty Flush v0.3.0.1](./assets/frosty-flush.png)
+## Description
+
+FlakeChain is a private, secure, untraceable, decentralised digital currency. You are your bank, you control your funds, 
+and nobody can trace your transfers unless you allow them to do so.
+
+## Community
+
+- [Github](https://github.com/flakechain)
+- [Discord](https://discordapp.com/invite/NqgvVYT)
+- [Telegram](https://t.me/flakechain)
+- [BitcoinTalk](https://bitcointalk.org/index.php?topic=4453691)
+- [Twitter](https://twitter.com/flakechain)
+
+## Markets
+
+- [StocksExchange](https://app.stocks.exchange/en/basic-trade/pair/BTC/XSF/1D)
+- [MapleChange](https://maplechange.com/markets/xsfbtc?markets=all&column=name&order=asc&unit=volume&pinned=true)
+
+![Flake Chain Snow Flake Frosty Flush](./assets/frosty-flush.png)
 
 <!--
 ### Installation from Brew (unstable)
@@ -70,24 +88,6 @@ brew install -v flake-core
  - added an timeoue for connections which don't complete a handshake
  - moved test building to the end of the CMake build process
  - as always, loads of bug fixes and performance improvements
-
-## Description
-
-FlakeChain is a private, secure, untraceable, decentralised digital currency. You are your bank, you control your funds, 
-and nobody can trace your transfers unless you allow them to do so.
-
-## Community
-
-- [Github](https://github.com/flakechain)
-- [Discord](https://discordapp.com/invite/NqgvVYT)
-- [Telegram](https://t.me/flakechain)
-- [BitcoinTalk](https://bitcointalk.org/index.php?topic=4453691)
-- [Twitter](https://twitter.com/flakechain)
-
-## Markets
-
-- [StocksExchange](https://app.stocks.exchange/en/basic-trade/pair/BTC/XSF/1D)
-- [MapleChange](https://maplechange.com/markets/xsfbtc?markets=all&column=name&order=asc&unit=volume&pinned=true)
 
 ## Building from source
 
