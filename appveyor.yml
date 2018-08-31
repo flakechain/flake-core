@@ -14,14 +14,4 @@ environment:
   BOOST_LIBRARYDIR: C:\Libraries\boost_1_67_0\lib64-msvc-14
 
 build_script:
-- sh: echo "Starting build"
-
-after_build:
-- cd src\Release
-- mkdir flakechain-%APPVEYOR_BUILD_NUMBER%
-- copy *.exe flakechain-%APPVEYOR_BUILD_NUMBER%
-- 7z a flakechain-%APPVEYOR_BUILD_NUMBER%-windows.zip flakechain-%APPVEYOR_BUILD_NUMBER%
-
-artifacts:
-- path: flakechain-%APPVEYOR_BUILD_NUMBER%-windows.zip
-  name: FlakechainRelease
+  - sh: echo "Starting build"
