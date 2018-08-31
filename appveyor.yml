@@ -14,7 +14,7 @@ environment:
   BOOST_LIBRARYDIR: C:\Libraries\boost_1_67_0\lib64-msvc-14
 
 build_script:
-- echo "Starting build"
+- sh: echo "Starting build"
 
 after_build:
 - cd src\Release
