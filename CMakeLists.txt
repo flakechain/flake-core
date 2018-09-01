@@ -473,7 +473,7 @@ if (PCSC_FOUND)
   add_definitions(-DHAVE_PCSC)
   include_directories(${PCSC_INCLUDE_DIR})
   link_directories(${LIBPCSC_LIBRARY_DIRS})
-else (PCSC_FOUND)
+else()
   message(STATUS "Could not find PCSC")
 endif()
 
@@ -855,9 +855,10 @@ if(CMAKE_C_COMPILER_ID STREQUAL "Clang" AND ARCH_WIDTH EQUAL "32" AND NOT IOS AN
   list(APPEND EXTRA_LIBRARIES ${ATOMIC})
 endif()
 
-find_package(ZMQ REQUIRED)
-set(ZMQ_INCLUDE_PATH ${ZMQ_INCLUDE_DIR})
-set(ZMQ_LIB ${ZMQ_LIBRARY})
+#find_package(ZMQ REQUIRED)
+find_package(cppzmq)
+set(ZMQ_INCLUDE_PATH ${CPPZMQ_INCLUDE_DIR})
+set(ZMQ_LIB cppzmq)
 
 #find_path(ZMQ_INCLUDE_PATH zmq.hpp)
 #find_library(ZMQ_LIB zmq)
