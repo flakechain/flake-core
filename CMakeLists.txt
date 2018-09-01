@@ -856,7 +856,7 @@ if(CMAKE_C_COMPILER_ID STREQUAL "Clang" AND ARCH_WIDTH EQUAL "32" AND NOT IOS AN
 endif()
 
 #find_package(ZMQ REQUIRED)
-find_package(cppzmq)
+find_package(cppzmq REQUIRED)
 set(ZMQ_INCLUDE_PATH ${CPPZMQ_INCLUDE_DIR})
 set(ZMQ_LIB cppzmq)
 
