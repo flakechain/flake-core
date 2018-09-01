@@ -16,6 +16,28 @@ environment:
 install:
 - git submodule update --init --recursive
 
+  BOOST_ROOT  C:\Libraries\boost_1_67_0
+  BOOST_LIBRARYDIR  C:\Libraries\boost_1_67_0\lib64-msvc-14.1
+  VCPKG_DIR C:\Tools\vcpkg
+  PLATFORM  x64
+
+init:
+  cd %VCPKG_DIR%
+  git pull
+  echo.set(VCPKG_BUILD_TYPE release)>> %VCPKG_DIR%\triplets\%PLATFORM%-windows.cmake
+  .\bootstrap-vcpkg.bat
+  vcpkg version
+  cd %APPVEYOR_BUILD_FOLDER%
+
+install:
+  git submodule update --init --recursive
+
+  vcpkg install boost-system boost-filesystem boost-thread boost-date-time boost-chrono boost-regex boost-serialization boost-program-options boost-locale zeromq cppzmq libsodium --triplet %PLATFORM%-windows
+
+  vcpkg list
+
+  set PATH=%VCPKG_DIR%\installed\%PLATFORM%-windows\bin;%PATH%
+
 build_script:
 - echo "Starting build"
 - md build

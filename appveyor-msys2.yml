@@ -1,0 +1,9 @@
+image: Visual Studio 2017
+platform: x64
+clone_folder: c:\Projects\flake-core
+environment:
+  BOOST_ROOT: C:\Libraries\boost_1_67_0
+  BOOST_LIBRARYDIR: C:\Libraries\boost_1_67_0\lib64-msvc-17
+  matrix:
+    - MSYS2_ARCH: x86_64
+      MSYSTEM: MINGW64
