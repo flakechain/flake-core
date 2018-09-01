@@ -40,7 +40,7 @@ after_failure:
 before_deploy:
 - cd build/release/bin
 - mkdir flakechain-${TRAVIS_TAG}/
-- mv flake* flakechain-${TRAVIS_TAG}/
+- mv flaked flake-* flakechain-${TRAVIS_TAG}/
 - tar cvzf flakechain-${TRAVIS_OS_NAME}-${TRAVIS_TAG}.tar.bz2 flakechain-${TRAVIS_TAG}/
 
 deploy:
