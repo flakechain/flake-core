@@ -888,6 +888,7 @@ endif()
 if (sodium_FOUND)
   include_directories(${sodium_INCLUDE_DIR})
   set(ZMQ_LIB "${ZMQ_LIB};${sodium_LIBRARY_RELEASE}")
+  set(SODIUM_LIBRARY ${sodium_LIBRARY_RELEASE})
 endif()
 
 add_subdirectory(contrib)
