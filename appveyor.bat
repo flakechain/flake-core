@@ -8,3 +8,7 @@ set CHERE_INVOKING=yes
 bash -lc "set pwd"
 bash -lc "env"
 bash -lc "make release-static-win64"
+cd build\release\bin
+mkdir flakechain-windows-%APPVEYOR_BUILD_NUMBER%
+copy *.exe flakechain-windows-%APPVEYOR_BUILD_NUMBER%
+7z a flakechain-windows-%APPVEYOR_BUILD_NUMBER%.zip flakechain-windows-%APPVEYOR_BUILD_NUMBER%

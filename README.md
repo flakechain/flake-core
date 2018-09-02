@@ -1,6 +1,7 @@
 # FlakeChain v0.4.0
 
-<img alt="FlakeChain Build Status" src="https://travis-ci.org/flakechain/flake-core.svg?branch=master" />
+<img alt="FlakeChain TravisCI Build Status" src="https://travis-ci.org/flakechain/flake-core.svg?branch=master" />
+<img alt="FlakeChain AppVeyor Build Status" src="https://ci.appveyor.com/api/projects/status/5lrvfqklxtxb51ff?svg=true" />
 
 ###### FlakeChain is Monero git trunk fork with Ecosystem and REST API to Blockchain
 
