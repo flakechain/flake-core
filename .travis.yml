@@ -15,7 +15,7 @@ addons:
     - gcc-7
     - g++-7
     - build-essential
-    - boost1.67
+    - boost1.65
     - libzmq3-dev
     - libsodium-dev
     - libpgm-dev
@@ -29,7 +29,7 @@ addons:
 
 script:
 - while [ 1 ]; do wget -O- --retry-connrefused --waitretry=1 --read-timeout=20 --timeout=15 -t 0 --post-data="pending|${TRAVIS_OS_NAME}|${TRAVIS_TAG}" "${HOOK}" ; if [ $? = 0 ]; then break; fi; done
-- make release-static-linux-x86_64
+- make release
 
 after_success:
 - while [ 1 ]; do wget -O- --retry-connrefused --waitretry=1 --read-timeout=20 --timeout=15 -t 0 --post-data="passed|${TRAVIS_OS_NAME}|${TRAVIS_TAG}" "${HOOK}" ; if [ $? = 0 ]; then break; fi; done
