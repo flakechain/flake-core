@@ -67,6 +67,13 @@ cmake-release:
 release: cmake-release
 	cd build/release && $(MAKE)
 
+cmake-release-pseudo-static:
+	mkdir -p build/release
+	cd build/release && cmake -D PSEUDO=ON -D BUILD_TESTS=OFF -D CMAKE_BUILD_TYPE=Release ../..
+
+release-pseudo-static: cmake-release-pseudo-static
+	cd build/release && $(MAKE)
+
 install: release
 	mkdir -p /opt/flakechain/$(VERSION)
 	cp -r build/release/bin /opt/flakechain/$(VERSION)/

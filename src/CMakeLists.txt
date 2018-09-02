@@ -74,6 +74,9 @@ function (monero_add_executable name)
   target_link_libraries("${name}"
     PRIVATE
       ${EXTRA_LIBRARIES})
+  if(PSEUDO)
+    target_link_libraries("${name}" PRIVATE -static)
+  endif()
   set_property(TARGET "${name}"
     PROPERTY
       FOLDER "prog")
