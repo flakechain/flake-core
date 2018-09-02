@@ -9,6 +9,10 @@
 FlakeChain is a private, secure, untraceable, decentralised digital currency. You are your bank, you control your funds, 
 and nobody can trace your transfers unless you allow them to do so.
 
+## Updating to boost1.67 (boost-latest) on Ubuntu (any version)
+
+[![asciicast](https://asciinema.org/a/199344.png)](https://asciinema.org/a/199344)
+
 ## Community
 
 - [Github](https://github.com/flakechain)

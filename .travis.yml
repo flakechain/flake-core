@@ -10,12 +10,12 @@ addons:
     sources:
     - sourceline: ppa:chris-lea/libsodium
     - ubuntu-toolchain-r-test
-#    - sourceline: ppa:mhier/libboost-latest
+    - sourceline: ppa:mhier/libboost-latest
     packages:
     - gcc-7
     - g++-7
     - build-essential
-    - libboost-all-dev
+    - libboost1.67
     - libzmq3-dev
     - libsodium-dev
     - libpgm-dev
