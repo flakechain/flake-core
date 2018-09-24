@@ -428,6 +428,8 @@ namespace nodetool
     };
   };
 
+#endif
+
   /************************************************************************/
   /*                                                                      */
   /************************************************************************/
@@ -450,8 +452,6 @@ namespace nodetool
       END_KV_SERIALIZE_MAP()
     };
   };
-
-#endif
 
 
   inline crypto::hash get_proof_of_trust_hash(const nodetool::proof_of_trust& pot)
