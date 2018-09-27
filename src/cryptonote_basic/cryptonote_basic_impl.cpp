@@ -97,6 +97,7 @@ namespace cryptonote {
     if (base_reward < FINAL_SUBSIDY_PER_MINUTE*target_minutes)
     {
       base_reward = FINAL_SUBSIDY_PER_MINUTE*target_minutes;
+      std::cout << "\nbase_reward: " << base_reward << "\n";
     }
 
     uint64_t full_reward_zone = get_min_block_size(version);
@@ -134,7 +135,6 @@ namespace cryptonote {
     assert(reward_lo < base_reward);
 
     reward = reward_lo;
-    std::cout << "\n\nREWARD: " << reward << "\n\n";
     return true;
   }
   //------------------------------------------------------------------------------------
