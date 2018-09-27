@@ -12,6 +12,7 @@
 #define FLAKE_BLOCK_MAJOR_VERSION                       (7)
 
 #define FLAKE_MONEY_SUPPLY                              (-1ull)
+#define FLAKE_EMISSION_SPEED_FACTOR_PER_MINUTE          (21)
 #define FLAKE_FINAL_SUBSIDY_PER_MINUTE                  (300000000000ull)
 
 #define P2P_SUPPORT_FLAG_TROUBLESOME_BLOCKS             0x02

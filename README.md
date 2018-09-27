@@ -1,4 +1,4 @@
-# FlakeChain v0.4.0
+# FlakeChain v0.4.9-beta
 
 <img alt="FlakeChain TravisCI Build Status" src="https://travis-ci.org/flakechain/flake-core.svg?branch=master" />
 <img alt="FlakeChain AppVeyor Build Status" src="https://ci.appveyor.com/api/projects/status/5lrvfqklxtxb51ff?svg=true" />
