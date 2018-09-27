@@ -134,6 +134,7 @@ namespace cryptonote {
     assert(reward_lo < base_reward);
 
     reward = reward_lo;
+    std::cout << "\n\nREWARD: " << reward << "\n\n";
     return true;
   }
   //------------------------------------------------------------------------------------
