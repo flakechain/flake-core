@@ -44,8 +44,6 @@ cmake_minimum_required(VERSION 3.12)
 
 project(flakechain)
 
-set(BOOST_ROOT "C:\Libraries\boost_1_67_0")
-
 function (die msg)
   if (NOT WIN32)
     string(ASCII 27 Esc)
@@ -285,6 +283,7 @@ endif()
 set(PIC_FLAG "-fPIC")
 
 if(MINGW)
+  set(BOOST_ROOT "C:\\Libraries\\boost_1_67_0")
   string(REGEX MATCH "^[^/]:/[^/]*" msys2_install_path "${CMAKE_C_COMPILER}")
   message(STATUS "MSYS location: ${msys2_install_path}")
   set(CMAKE_INCLUDE_PATH "${msys2_install_path}/mingw${ARCH_WIDTH}/include")
