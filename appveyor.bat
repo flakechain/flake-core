@@ -7,7 +7,7 @@ cd %APPVEYOR_BUILD_FOLDER%
 set CHERE_INVOKING=yes
 bash -lc "set pwd"
 bash -lc "env"
-bash -lc "make release-static-win64"
+bash -lc "make release-static-win64-appveyor"
 cd build\release\bin
 mkdir flakechain-windows-%APPVEYOR_BUILD_NUMBER%
 copy *.exe flakechain-windows-%APPVEYOR_BUILD_NUMBER%
