@@ -139,7 +139,7 @@ release-static-win64:
 
 release-static-win64-appveyor:
 	mkdir -p build/release
-	cd build/release && cmake -G "MSYS Makefiles" -D STATIC=ON -D ARCH="x86-64" -D BUILD_64=ON -D CMAKE_BUILD_TYPE=Release -D BUILD_TAG="win-x64" -D CMAKE_TOOLCHAIN_FILE=../../cmake/64-bit-toolchain.cmake -D MSYS2_FOLDER=c:/msys64 ../.. -D BOOST_ROOT=c:/Libraries/boost_1_67_0 && $(MAKE)
+	cd build/release && cmake -G "MSYS Makefiles" -D STATIC=ON -D ARCH="x86-64" -D BUILD_64=ON -D CMAKE_BUILD_TYPE=Release -D BUILD_TAG="win-x64" -D CMAKE_TOOLCHAIN_FILE=../../cmake/64-bit-toolchain.cmake -D MSYS2_FOLDER=c:/msys64 -D BOOST_ROOT=c:/Libraries/boost_1_67_0 ../.. && $(MAKE)
 
 release-static-win32:
 	mkdir -p build/release
