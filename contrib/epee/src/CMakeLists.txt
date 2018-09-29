@@ -33,9 +33,12 @@ if (USE_READLINE AND GNU_READLINE_FOUND)
   add_library(epee_readline STATIC readline_buffer.cpp)
 endif()
 
-if(HAVE_C11)
-SET_PROPERTY(SOURCE memwipe.c PROPERTY COMPILE_FLAGS -std=c11)
-endif()
+#if(HAVE_C11)
+#SET_PROPERTY(SOURCE memwipe.c PROPERTY COMPILE_FLAGS -std=c11)
+#endif()
+
+SET_PROPERTY(SOURCE memwipe.c PROPERTY COMPILE_FLAGS -std=c14)
+
 
 # Build and install libepee if we're building for GUI
 if (BUILD_GUI_DEPS)
