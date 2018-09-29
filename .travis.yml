@@ -15,7 +15,7 @@ addons:
     - gcc-7
     - g++-7
     - build-essential
-    - libboost1.67
+    - boost1.67
     - libzmq3-dev
     - libsodium-dev
     - libpgm-dev
