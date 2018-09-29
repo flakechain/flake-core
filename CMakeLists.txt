@@ -44,6 +44,8 @@ cmake_minimum_required(VERSION 3.12)
 
 project(flakechain)
 
+set(BOOST_ROOT "C:\Libraries\boost_1_67_0")
+
 function (die msg)
   if (NOT WIN32)
     string(ASCII 27 Esc)
@@ -801,11 +803,11 @@ if(STATIC)
   set(Boost_USE_STATIC_LIBS ON)
   set(Boost_USE_STATIC_RUNTIME ON)
 endif()
-find_package(Boost 1.63 QUIET REQUIRED COMPONENTS system filesystem thread date_time chrono regex serialization program_options locale)
+find_package(Boost 1.67 QUIET REQUIRED COMPONENTS system filesystem thread date_time chrono regex serialization program_options locale)
 
 set(CMAKE_FIND_LIBRARY_SUFFIXES ${OLD_LIB_SUFFIXES})
 if(NOT Boost_FOUND)
-  die("Could not find Boost libraries, please make sure you have installed Boost or libboost1.63 or the equivalent")
+  die("Could not find Boost libraries, please make sure you have installed Boost or libboost1.67 or the equivalent")
 elseif(Boost_FOUND)
   message(STATUS "Found Boost Version: ${Boost_VERSION}")
   if (Boost_VERSION VERSION_LESS 106200 AND NOT (OPENSSL_VERSION VERSION_LESS 1.1))
