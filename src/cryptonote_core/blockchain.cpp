@@ -1343,6 +1343,9 @@ bool Blockchain::create_block_template(block& b, const account_public_address& m
     if (coinbase_weight < cumulative_weight - txs_weight)
     {
       size_t delta = cumulative_weight - txs_weight - coinbase_weight;
+      LOG_PRINT_L0("Creating block template: miner tx weight " << coinbase_weight <<
+                                                                      ", cumulative weight " << txs_weight + coinbase_weight <<
+                                                                      " is less than before, adding " << delta << " zero bytes");
 #if defined(DEBUG_CREATE_BLOCK_TEMPLATE)
       MDEBUG("Creating block template: miner tx weight " << coinbase_weight <<
           ", cumulative weight " << txs_weight + coinbase_weight <<
