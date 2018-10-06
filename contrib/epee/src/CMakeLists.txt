@@ -37,7 +37,7 @@ endif()
 #SET_PROPERTY(SOURCE memwipe.c PROPERTY COMPILE_FLAGS -std=c11)
 #endif()
 
-SET_PROPERTY(SOURCE memwipe.c PROPERTY COMPILE_FLAGS -std=c14)
+SET_PROPERTY(SOURCE memwipe.c PROPERTY COMPILE_FLAGS -std=c11)
 
 
 # Build and install libepee if we're building for GUI

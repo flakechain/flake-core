@@ -1,5 +1,5 @@
-image: Visual Studio 2017
-version: 0.4.0-alpha.{build}
+image: Visual Studio 2013
+version: 0.4.9-alpha.{build}
 platform: x64
 clone_folder: c:\Projects\flake-core
 
@@ -10,14 +10,14 @@ branches:
 configuration: Debug
 
 environment:
-  BOOST_ROOT: C:\Libraries\boost_1_67_0
-  BOOST_LIBRARYDIR: C:\Libraries\boost_1_67_0\lib64-msvc-17
+  BOOST_ROOT: C:\Libraries\boost_1_58_0
+  BOOST_LIBRARYDIR: C:\Libraries\boost_1_58_0\lib64-msvc-13
 
 install:
 - git submodule update --init --recursive
 
-  BOOST_ROOT  C:\Libraries\boost_1_67_0
-  BOOST_LIBRARYDIR  C:\Libraries\boost_1_67_0\lib64-msvc-14.1
+  BOOST_ROOT  C:\Libraries\boost_1_58_0
+  BOOST_LIBRARYDIR  C:\Libraries\boost_1_58_0\lib64-msvc-13.1
   VCPKG_DIR C:\Tools\vcpkg
   PLATFORM  x64
 
@@ -42,7 +42,7 @@ build_script:
 - echo "Starting build"
 - md build
 - cd build
-- cmake -G "Visual Studio 17 Win64" ..
+- cmake -G "Visual Studio 13 Win64" ..
 - echo "dir .."
 - dir ..
 - echo "dir ."
