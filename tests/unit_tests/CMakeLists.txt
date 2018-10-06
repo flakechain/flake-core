@@ -48,16 +48,19 @@ set(unit_tests_sources
   epee_boosted_tcp_server.cpp
   epee_levin_protocol_handler_async.cpp
   epee_utils.cpp
+  expect.cpp
   fee.cpp
   json_serialization.cpp
   get_xtype_from_string.cpp
   hashchain.cpp
   http.cpp
+  keccak.cpp
   main.cpp
   memwipe.cpp
   mlocker.cpp
   mnemonics.cpp
   mul_div.cpp
+  multiexp.cpp
   multisig.cpp
   parse_amount.cpp
   random.cpp
@@ -77,7 +80,9 @@ set(unit_tests_sources
   output_selection.cpp
   vercmp.cpp
   ringdb.cpp
-  wipeable_string.cpp)
+  wipeable_string.cpp
+  is_hdd.cpp
+  aligned.cpp)
 
 set(unit_tests_headers
   unit_tests_utils.h)
