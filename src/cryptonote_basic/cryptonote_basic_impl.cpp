@@ -94,11 +94,11 @@ namespace cryptonote {
     const int emission_speed_factor = EMISSION_SPEED_FACTOR_PER_MINUTE - (target_minutes-1);
 
     uint64_t base_reward = (MONEY_SUPPLY - already_generated_coins) >> emission_speed_factor;
-//    std::cout << "\nbase_reward: " << base_reward << "\n";
+    std::cout << "\nbase_reward: " << base_reward << "\n";
     if (base_reward < FINAL_SUBSIDY_PER_MINUTE*target_minutes)
     {
       base_reward = FINAL_SUBSIDY_PER_MINUTE*target_minutes;
-//      std::cout << "\nbase_reward(final-subsidy): " << base_reward << "\n";
+      std::cout << "\nbase_reward(final-subsidy): " << base_reward << "\n";
     }
 
     uint64_t full_reward_zone = get_min_block_weight(version);
