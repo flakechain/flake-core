@@ -11,6 +11,5 @@ bash -lc "env"
 bash -lc "make release-static-win64-appveyor"
 cd build\release\bin
 mkdir flakechain-windows-%APPVEYOR_BUILD_NUMBER%
-more C:/projects/flake-core/build/MINGW64_NT-6.3/master/release/CMakeFiles/CMakeError.log
 copy *.exe flakechain-windows-%APPVEYOR_BUILD_NUMBER%
 7z a flakechain-windows-%APPVEYOR_BUILD_NUMBER%.zip flakechain-windows-%APPVEYOR_BUILD_NUMBER%
