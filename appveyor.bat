@@ -9,7 +9,7 @@ set CHERE_INVOKING=yes
 bash -lc "set pwd"
 bash -lc "env"
 bash -lc "make release-static-win64-appveyor"
-cd build\release\bin
+cd build\MINGW64_NT-6.3\master\release\bin
 mkdir flakechain-windows-%APPVEYOR_BUILD_NUMBER%
 copy *.exe flakechain-windows-%APPVEYOR_BUILD_NUMBER%
 7z a flakechain-windows-%APPVEYOR_BUILD_NUMBER%.zip flakechain-windows-%APPVEYOR_BUILD_NUMBER%
