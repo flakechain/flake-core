@@ -570,7 +570,7 @@ else()
 
   set(WARNINGS "-Wall -Wextra -Wpointer-arith -Wundef -Wvla -Wwrite-strings -Wno-error=extra -Wno-error=deprecated-declarations -Wno-unused-parameter -Wno-unused-variable -Wno-error=unused-variable -Wno-error=undef -Wno-error=uninitialized")
   if(NOT MINGW)
-    set(WARNINGS_AS_ERRORS_FLAG "-Werror")
+#    set(WARNINGS_AS_ERRORS_FLAG "-Werror")
   endif()
   if(CMAKE_C_COMPILER_ID STREQUAL "Clang")
     if(ARM)
@@ -856,8 +856,8 @@ if(NOT Boost_FOUND)
   die("Could not find Boost libraries, please make sure you have installed Boost or libboost-all-dev (1.58) or the equivalent")
 elseif(Boost_FOUND)
   message(STATUS "Found Boost Version: ${Boost_VERSION}")
-  if (Boost_VERSION VERSION_LESS 106200 AND NOT (OPENSSL_VERSION VERSION_LESS 1.1))
-      message(FATAL_ERROR "Boost older than 1.62 is too old to link with OpenSSL 1.1 or newer. "
+  if (Boost_VERSION VERSION_LESS 105800 AND NOT (OPENSSL_VERSION VERSION_LESS 1.1))
+      message(FATAL_ERROR "Boost older than 1.58 is too old to link with OpenSSL 1.1 or newer. "
                           "Update Boost or install OpenSSL 1.0 and set path to it when running cmake: "
                           "cmake -DOPENSSL_ROOT_DIR='/usr/include/openssl-1.0;/usr/lib/openssl-1.0'")
   endif()
