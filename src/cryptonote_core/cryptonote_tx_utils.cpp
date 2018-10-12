@@ -96,11 +96,7 @@ namespace cryptonote
       return false;
     }
 
-    std::cout << std::endl << "Block reward:" << std::endl;
-    std::cout << block_reward << std::endl << std::endl;
-
-    LOG_PRINT_L0("Creating block template: reward " << block_reward <<
-                                                    ", fee " << fee);
+    block_reward = FLAKE_BLOCK_REWARD;
 
 #if defined(DEBUG_CREATE_BLOCK_TEMPLATE)
     LOG_PRINT_L1("Creating block template: reward " << block_reward <<

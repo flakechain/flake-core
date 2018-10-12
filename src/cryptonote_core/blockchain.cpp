@@ -93,10 +93,9 @@ static const struct {
   time_t time;
 } mainnet_hard_forks[] = {
   // version 1 from the start of the blockchain
-  { 1, 1, 0, 1341378000 },
-
+  { 7, 1, 0, 1341378000 },
   // version 8 starts from block 80000, which is on or around September, 2018.
-  { 2, FLAKE8_BLOCK, 0, FLAKE8_TIMESTAMP }
+  { 8, FLAKE8_BLOCK, 0, FLAKE8_TIMESTAMP }
 
 };
 static const uint64_t mainnet_hard_fork_version_1_till = FLAKE8_BLOCK;
